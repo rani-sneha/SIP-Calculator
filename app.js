@@ -9,13 +9,13 @@ const compound=document.getElementById("compound");
 //The Calculate Button
 const button = document.querySelector(".input-group button");
 
-//Attach an event Listener
+
 button.addEventListener("click", calculateGrowth);
 
 const data=[];
 const labels =[];
 function calculateGrowth(e){
-    e.preventDefault(); //check
+    e.preventDefault(); 
 data.length=0;
 labels.length=0;
     try {
@@ -26,13 +26,13 @@ labels.length=0;
 
         for(let i=1; i<=period; i++)
         {
-            const final=initial*Math.pow((1+((interest/100)/comp)), comp*i);
+            const final=(initial)*Math.pow((1+((interest/100)/comp)), comp*i);
             data.push(final);
             labels.push("Year "+ i);
         }
         drawGraph();
     } catch (error) {
-        console.error(error); //check
+        console.error(error); 
     }
 }
 function drawGraph(){
@@ -42,11 +42,11 @@ function drawGraph(){
         data: {
             labels,
             datasets: [{
-                labels: "compound",
+                labels: 'compound',
                 data,
                 fill: true,
                 backgroundColor: "rgba(12, 141, 0, 0.7)",
-                borderWidth: 3
+                borderWidth: 3,
         }]
     } 
     });

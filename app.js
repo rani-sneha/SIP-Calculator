@@ -26,7 +26,7 @@ labels.length=0;
         
         for(let i=1; i<=period; i++)
         {
-            const final=initial*(Math.pow((1+interest),(comp*i))-1)/(1+interest);
+            const final=initial*((Math.pow((1+interest),(comp*i))-1)/interest)*(1+interest);
             data.push(final);
             labels.push("Year "+ i);
         }

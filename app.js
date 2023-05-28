@@ -21,12 +21,12 @@ labels.length=0;
     try {
         const initial = parseInt(initialAmount.value);
         const period = parseInt(years.value);
-        const interest = parseInt(rates.value);
+        const interest = parseInt(rates.value)/100;
         const comp = parseInt(compound.value);
         
         for(let i=1; i<=period; i++)
         {
-            const final=initial*Math.pow((1+interest),((comp*i)-1))/(1+interest);
+            const final=initial*(Math.pow((1+interest),(comp*i))-1)/(1+interest);
             data.push(final);
             labels.push("Year "+ i);
         }

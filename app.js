@@ -21,7 +21,7 @@ labels.length=0;
     try {
         const initial = parseInt(initialAmount.value);
         const period = parseInt(years.value);
-        const interest = parseInt(rates.value)/100;
+        const interest = (parseInt(rates.value)/12)/100;
         const comp = parseInt(compound.value);
         
         for(let i=1; i<=period; i++)
